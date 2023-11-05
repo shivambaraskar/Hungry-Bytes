@@ -16,7 +16,7 @@ let food_pos = food.style;
 let count = 0;
 let highscore;
 (localStorage.getItem('highscore')!=undefined) ? highscore = localStorage.getItem('highscore') : highscore = 0;
-score_max.innerHTML = ` Highest Score: ${highscore} `;
+score_max.innerText = ` Highest Score: ${highscore} `;
 let dead = false;
 let tail = false;
 
@@ -71,15 +71,17 @@ let check_key = (event)=>{
         alert("Game Paused");
     }
 }
-
+ 
 let foodbyte = () => {
     let x = Math.floor(Math.random()*max_x);
     let y = Math.floor(Math.random()*max_y);
+    let dataText = String.fromCharCode(Math.floor(Math.random()*92)+33);
     food_posX = x-x%30;
     food_posY = y-y%30;
     food_pos.left = `${food_posX}px`;
     food_pos.top = `${food_posY}px`;
     food_pos.display = "block";
+    food.innerText = dataText;
 }
 
 let foodCaptured = () => {
@@ -89,8 +91,8 @@ let foodCaptured = () => {
         count++;
         (count > highscore) ? highscore = count : highscore = highscore;
         localStorage.setItem('highscore', highscore);
-        score_max.innerHTML = ` Highest Score: ${highscore} `;
-        score.innerHTML = ` Score: ${count} `;
+        score_max.innerText = ` Highest Score: ${highscore} `;
+        score.innerText = ` Score: ${count} `;
         return true;
     }
     return false;
@@ -104,7 +106,7 @@ let byteGrow = () => {
         document.getElementById("main-canvas").appendChild(newTail);
         let tail_n = document.getElementById(`tail-${count}`);     
         tail_n.setAttribute("style", "top: 180px; left: 120px;");
-        tail_n.innerHTML=`${count}`;
+        tail_n.innerText=count;
         tail=true;
     }
 }
