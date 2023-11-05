@@ -1,0 +1,67 @@
+*{
+    margin: auto;
+    padding: 0;
+    color-scheme: dark;
+}
+
+#topbox{
+    width: 100%;
+    height: 50px;
+    margin-top: 2px;
+    font-size: large;
+    border: 4px solid rgb(0, 255, 255);
+    text-align: center;
+    border-bottom: none;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #000016;
+    box-sizing: border-box;
+}
+#heading{
+    color: #e600ff;
+    display: inline-block;
+}
+
+h3{
+    position: absolute;
+    color: aliceblue;
+    display: inline-block;
+}
+
+#score{
+    top: 16px;
+    right: 50px;
+}
+
+#highscore{
+    top: 16px;
+    left: 50px;
+}
+
+#main-canvas{
+    position: relative;
+    box-sizing: border-box;
+    border: 4px solid rgb(0, 255, 255);
+    background-color: #000016;
+}
+
+#bytebox, #foodbox, .tail-box{
+    margin: 5px;
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    z-index: 4;
+    text-align: center;
+    font-weight: 600;
+    color: black;
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #44ff00;
+}
+
+#foodbox{
+    left: 120px;
+    top: 180px;
+    display: block;
+    background-color: #ff0000;
+}
